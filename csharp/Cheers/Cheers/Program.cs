@@ -14,19 +14,23 @@ namespace Cheers
             
             Console.Clear();
             string name;
-            Console.WriteLine("\nWhat's your name?");
+            string bday;
+            Console.WriteLine("What's your name?");
             Console.WriteLine();
             do
             {
                 Console.Write("  ");
                 name = Console.ReadLine();
-                if (name != null)
-                    Console.WriteLine("Give me a(n) ..."+ (name[0]));
-                       //Assert.Equal(name, name[0]);
-                    Console.WriteLine("Give me a(n) ...  " + (name[1]));
-                    Console.WriteLine("Give me a(n)..." + (name[2]));
+               if (name != null)
+                    for (int i = 0; i < name.Length; i++) {
+                        Console.WriteLine("Give me a(n) ..." + (name[i]));
+                       
+                    }
+                //Assert.Equal(name, name[0]);
+                //Console.WriteLine("Give me a(n) ...  " + (name[1]));
+                //Console.WriteLine("Give me a(n)..." + (name[2]));
 
-                    Console.WriteLine( name + " is .. GRAND!");
+                Console.WriteLine( name + " is .. GRAND!");
 
             } while (name != null);
 
