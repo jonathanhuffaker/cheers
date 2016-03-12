@@ -27,24 +27,39 @@ namespace Cheers
             //DateTime today = DateTime.Now;
             DateTime today = DateTime.Today;
 
+           // tested below to see if this is the same result as myDayOBirth - it is
             DateTime bdaydate = Convert.ToDateTime(bday);
             //var daysTill = (today - bdaydate).Days;
             var daysTill = (today - myDayOBirth).Days;
 
-            Console.WriteLine(myDayOBirth);
-            Console.WriteLine(bdaydate);
-            Console.WriteLine(name);
-            Console.WriteLine(bday);
-            Console.WriteLine(today);
-            Console.WriteLine(daysTill);
             TimeSpan diff1 = today.Subtract(bdaydate);
-            Console.WriteLine(diff1);
-/*
-            do
+
+            //Console.WriteLine(myDayOBirth);
+            //Console.WriteLine(bdaydate);
+            //Console.WriteLine(name);
+            //Console.WriteLine(bday);
+            //Console.WriteLine(today);
+
+                if (bdaydate.Month < today.Month)
             {
-                Console.Write("  ");
-                name = Console.ReadLine();
-               if (name != null) */
+                daysTill = 365 - daysTill;
+                Console.WriteLine("Your birthday is in .... " + daysTill + " days!");
+            }
+            else
+            {
+                Console.WriteLine("Your birthday is in .... " + diff1 + " days!");
+            }  
+
+                if(daysTill == 0)
+                {
+                    Console.WriteLine("Happy Birthday!!!!!");
+
+                }
+            
+            
+
+
+
            for (int i = 0; i < name.Length; i++) {
                 //halfnorsemix
 
@@ -60,10 +75,6 @@ namespace Cheers
 
             }
             Console.WriteLine(name + " is .. GRAND!");
-
-            //Assert.Equal(name, name[0]);
-            //Console.WriteLine("Give me a(n) ...  " + (name[1]));
-            //Console.WriteLine("Give me a(n)..." + (name[2]));
 
             //} while (name != null);
             Console.ReadLine();
