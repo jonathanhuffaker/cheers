@@ -15,37 +15,58 @@ namespace Cheers
             Console.Clear();
             string name;
             string bday;
+
             Console.WriteLine("What's your name?");
             name = Console.ReadLine();
 
             Console.WriteLine("What's your birthday (mm/dd)?");
             bday = Console.ReadLine();
 
-            DateTime today = DateTime.Now;
+            DateTime myDayOBirth = DateTime.Parse(bday);
+
+            //DateTime today = DateTime.Now;
+            DateTime today = DateTime.Today;
+
             DateTime bdaydate = Convert.ToDateTime(bday);
-            var daysTill = (today - bdaydate).Days;
+            //var daysTill = (today - bdaydate).Days;
+            var daysTill = (today - myDayOBirth).Days;
+
+            Console.WriteLine(myDayOBirth);
+            Console.WriteLine(bdaydate);
             Console.WriteLine(name);
             Console.WriteLine(bday);
+            Console.WriteLine(today);
             Console.WriteLine(daysTill);
+            TimeSpan diff1 = today.Subtract(bdaydate);
+            Console.WriteLine(diff1);
 /*
             do
             {
                 Console.Write("  ");
                 name = Console.ReadLine();
                if (name != null) */
-                    for (int i = 0; i < name.Length; i++) {
-                        Console.WriteLine("Give me a(n) ..." + (name[i]));
-                       
-                    } 
-                //Assert.Equal(name, name[0]);
-                //Console.WriteLine("Give me a(n) ...  " + (name[1]));
-                //Console.WriteLine("Give me a(n)..." + (name[2]));
+           for (int i = 0; i < name.Length; i++) {
+                //halfnorsemix
 
-                Console.WriteLine( name + " is .. GRAND!");
+                string giveA = "a";
+                string giveAn = "an";
+                if (name[i] == 'h' || name[i] == 'a' || name[i] == 'l' || name[i] == 'f' || name[i] == 'n' || name[i] == 'o' || name[i] == 'r' || name[i] == 's' || name[i] == 'e' || name[i] == 'm' || name[i] == 'i' || name[i] == 'x')
+                {
+                    Console.WriteLine("Give me " + giveAn + "..." + name[i]);
+                } else
+                {
+                    Console.WriteLine("Give me " + giveA + "..." + name[i]);
+                }
+
+            }
+            Console.WriteLine(name + " is .. GRAND!");
+
+            //Assert.Equal(name, name[0]);
+            //Console.WriteLine("Give me a(n) ...  " + (name[1]));
+            //Console.WriteLine("Give me a(n)..." + (name[2]));
 
             //} while (name != null);
             Console.ReadLine();
-             
         }
     }
 }
